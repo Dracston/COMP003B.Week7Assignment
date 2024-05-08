@@ -14,6 +14,12 @@ namespace COMP003B.Week7Assignment
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            // Set up the database context.
+            builder.Services.AddDbContext<MovieCatalogueContext>(options =>
+                options.UseSqlServer("Name=ConnectionStrings:DefaultConnection"));
+
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

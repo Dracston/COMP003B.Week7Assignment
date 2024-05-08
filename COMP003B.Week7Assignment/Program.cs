@@ -1,3 +1,8 @@
+using COMP003B.Week7Assignment.Data;
+using Microsoft.EntityFrameworkCore;
+
+
+
 namespace COMP003B.Week7Assignment
 {
     public class Program

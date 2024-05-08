@@ -4,6 +4,8 @@ namespace COMP003B.Week7Assignment.Models
 {
     public class Movie
     {
+        public int movieId { get; set; }
+
         [Required]
         public int yearReleased { get; set; }
         [Required]

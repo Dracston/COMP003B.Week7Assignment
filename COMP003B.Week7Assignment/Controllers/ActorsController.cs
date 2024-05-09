@@ -41,10 +41,11 @@ namespace COMP003B.Week7Assignment.Controllers
             }
 
             ViewBag.Movies = from a in _context.Actors
-                             join i in _context.IMDBs on a.actorId equals i.actorId
-                             join m in _context.Movies on i.movieId equals m.movieId
-                             where a.actorId == id
-                             select m;
+                              join i in _context.IMDBs on a.actorId equals i.actorId
+                              join m in _context.Movies on i.movieId equals m.movieId
+                              where a.actorId == id
+                              select m;
+
 
 
             return View(actor);
@@ -61,7 +62,7 @@ namespace COMP003B.Week7Assignment.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("actorId,actorName,rolePlayed")] Actor actor)
+        public async Task<IActionResult> Create([Bind("actorId,actorName,rolePlayed,Age")] Actor actor)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +94,7 @@ namespace COMP003B.Week7Assignment.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("actorId,actorName,rolePlayed")] Actor actor)
+        public async Task<IActionResult> Edit(int id, [Bind("actorId,actorName,rolePlayed,Age")] Actor actor)
         {
             if (id != actor.actorId)
             {

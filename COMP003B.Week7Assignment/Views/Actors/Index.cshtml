@@ -18,6 +18,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.rolePlayed)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -29,6 +32,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.rolePlayed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.actorId">Edit</a> |

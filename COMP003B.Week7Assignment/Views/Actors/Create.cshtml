@@ -1,0 +1,38 @@
+﻿@model COMP003B.Week7Assignment.Models.Actor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Actor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="actorName" class="control-label"></label>
+                <input asp-for="actorName" class="form-control" />
+                <span asp-validation-for="actorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rolePlayed" class="control-label"></label>
+                <input asp-for="rolePlayed" class="form-control" />
+                <span asp-validation-for="rolePlayed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

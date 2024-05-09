@@ -15,4 +15,5 @@ namespace COMP003B.Week7Assignment.Models
         //Collection Navigation property
         public virtual ICollection<IMDB>? IMDBs { get; set; }
     }
+
 }
